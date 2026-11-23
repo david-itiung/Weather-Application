@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Weather Dashboard</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="weather-card">
+    <header class="card-header">
+      <h1>Weather</h1>
+      <button id="unit-toggle" type="button" class="unit-btn">°C / °F</button>
+    </header>
+
+    <div class="search-bar">
+      <div class="search-wrapper">
+      <div class="search-bar">
+        <input
+          type="text"
+          id="city-input"
+          placeholder="Enter city name..."
+          aria-label="City name"
+          autocomplete="off"
+        />
+        <button id="location-btn" type="button" title="Use my current location" aria-label="Use my current location">
+          📍
+        </button>
+        <button id="search-btn" type="button">Search</button>
+      </div>
+      <ul id="suggestions-list" class="suggestions-list" role="listbox" hidden></ul>
+    </div>
+    </div>
+
+    <p id="loading-message" class="status-msg loading" hidden>Loading weather...</p>
+    <p id="error-message" class="status-msg error" hidden></p>
+
+    <section class="weather-display">
+      <h2 id="city-name">—</h2>
+
+      <div class="temp-row">
+        <img id="weather-icon" src="" alt="" />
+        <span id="temp-value">--°</span>
+      </div>
+
+      <p id="weather-description" class="condition-text">Search a city to see current weather</p>
+
+      <div class="details-grid">
+        <div class="detail-box">
+          <span class="detail-label">Humidity</span>
+          <span id="humidity-value" class="detail-value">--%</span>
+        </div>
+        <div class="detail-box">
+          <span class="detail-label">Wind Speed</span>
+          <span id="wind-value" class="detail-value">-- km/h</span>
+        </div>
+      </div>
+    </section>
+    <section class="forecast-section" aria-label="Multi-day forecast">
+      <h3 class="forecast-title">3-Day Forecast</h3>
+      <div id="forecast-list" class="forecast-grid"></div>
+    </section>
+    <section class="hourly-section" aria-label="Hourly forecast">
+      <h3 class="section-subtitle">Today's Hourly</h3>
+      <div id="hourly-list" class="hourly-strip"></div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
